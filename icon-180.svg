@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <!-- Rainbow background -->
+  <defs>
+    <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff0000"/>
+      <stop offset="16.67%" stop-color="#ff8000"/>
+      <stop offset="33.33%" stop-color="#ffff00"/>
+      <stop offset="50%" stop-color="#00ff00"/>
+      <stop offset="66.67%" stop-color="#0000ff"/>
+      <stop offset="83.33%" stop-color="#8000ff"/>
+      <stop offset="100%" stop-color="#ff00ff"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="180" height="180" rx="35" ry="35" fill="url(#rainbow)"/>
+  
+  <!-- Letter C for Color Coach -->
+  <text x="90" y="120" font-family="Arial, sans-serif" font-size="110" font-weight="bold" text-anchor="middle" fill="white" stroke="black" stroke-width="4">C</text>
+</svg>
