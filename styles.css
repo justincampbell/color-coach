@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f7;
+}
+
+#colorDisplay {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vw;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden initially */
+}
+
+/* Config Panel */
+#configPanel {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1d1d1f;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+.config-section {
+    margin-bottom: 30px;
+}
+
+/* Color Options */
+.color-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.color-options label {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #f5f5f7;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.color-options label:hover {
+    background-color: #e5e5ea;
+}
+
+/* Slider */
+.slider-container {
+    padding: 10px 0;
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #e5e5ea;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #0071e3;
+    cursor: pointer;
+}
+
+.slider-value {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: #1d1d1f;
+}
+
+/* Button */
+#startButton {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#startButton:hover {
+    background-color: #0077ED;
+}
+
+@media (max-width: 600px) {
+    #configPanel {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .color-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

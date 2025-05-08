@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Color Coach</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="configPanel">
+        <h1>Color Coach Setup</h1>
+        
+        <div class="config-section">
+            <h2>Select Colors</h2>
+            <div class="color-options">
+                <label><input type="checkbox" name="colors" value="red"> Red</label>
+                <label><input type="checkbox" name="colors" value="green"> Green</label>
+                <label><input type="checkbox" name="colors" value="blue" checked> Blue</label>
+                <label><input type="checkbox" name="colors" value="yellow" checked> Yellow</label>
+                <label><input type="checkbox" name="colors" value="orange"> Orange</label>
+                <label><input type="checkbox" name="colors" value="purple"> Purple</label>
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>Change Interval</h2>
+            <div class="slider-container">
+                <input type="range" id="intervalSlider" min="1" max="20" value="5" class="slider">
+                <div class="slider-value"><span id="intervalValue">5</span> seconds</div>
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2>Display Options</h2>
+            <label><input type="checkbox" id="showColorName"> Show color name</label>
+        </div>
+
+        <button id="startButton">Start Color Coach</button>
+    </div>
+
+    <div id="colorDisplay"></div>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
