@@ -13,6 +13,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #f5f5f7;
     overflow-y: auto;
+    position: relative;
 }
 
 #colorDisplay {
@@ -37,13 +38,18 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    height: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .app-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .app-icon {
@@ -141,10 +147,25 @@ h2 {
 }
 
 @media (max-width: 600px) {
+    body {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+    
     #configPanel {
-        margin: 10px;
+        margin: 5px;
         padding: 10px;
-        max-height: 95vh;
+        max-height: 98vh;
+        overflow-y: scroll;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
     
     .color-options {
@@ -157,7 +178,7 @@ h2 {
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin-bottom: 0;
     }
 
@@ -172,5 +193,6 @@ h2 {
 
     #startButton {
         padding: 12px;
+        margin-bottom: 20px;
     }
 }
