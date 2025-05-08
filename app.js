@@ -127,12 +127,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ensure we get the full height on iOS devices
         document.documentElement.style.height = `${window.innerHeight}px`;
         
-        // Set up click handler for fullscreen
-        colorDisplay.addEventListener('click', () => {
+        // Set up click handler for fullscreen and return to config
+        colorDisplay.addEventListener('click', (event) => {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen().catch(err => {
                     console.error('Fullscreen request failed:', err);
                 });
+            } else {
+                // Return to config panel when tapped
+                configPanel.style.display = 'block';
+                colorDisplay.style.display = 'none';
+                
+                // Clear the color change timer
+                if (changeTimer) {
+                    clearInterval(changeTimer);
+                    changeTimer = null;
+                }
+                
+                // Exit fullscreen if we're in it
+                if (document.fullscreenElement) {
+                    document.exitFullscreen().catch(err => {
+                        console.error('Exit fullscreen failed:', err);
+                    });
+                }
             }
         });
         
