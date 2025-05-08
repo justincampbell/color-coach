@@ -124,6 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Prevent display sleep
         preventSleep();
         
+        // Ensure we get the full height on iOS devices
+        document.documentElement.style.height = `${window.innerHeight}px`;
+        
         // Set up click handler for fullscreen
         colorDisplay.addEventListener('click', () => {
             if (!document.fullscreenElement) {
@@ -131,6 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('Fullscreen request failed:', err);
                 });
             }
+        });
+        
+        // Fix for iOS height calculation
+        window.addEventListener('resize', () => {
+            document.documentElement.style.height = `${window.innerHeight}px`;
         });
     }
     
