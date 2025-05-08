@@ -128,7 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.height = `${window.innerHeight}px`;
         
         // Set up click handler for fullscreen and return to config
-        colorDisplay.addEventListener('click', (event) => {
+        colorDisplay.addEventListener('click', handleTapOrClick);
+        
+        // Add specific touch support for iOS/mobile devices
+        colorDisplay.addEventListener('touchend', handleTapOrClick);
+        
+        // Handle both click and touch events
+        function handleTapOrClick(event) {
+            // Prevent default behavior
+            event.preventDefault();
+            
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen().catch(err => {
                     console.error('Fullscreen request failed:', err);
@@ -151,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
             }
-        });
+        }
         
         // Fix for iOS height calculation
         window.addEventListener('resize', () => {
