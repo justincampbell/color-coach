@@ -27,6 +27,12 @@ body {
     color: white;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: none; /* Hidden initially */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 /* Config Panel */
@@ -154,18 +160,25 @@ h2 {
         right: 0;
         bottom: 0;
         overflow: hidden;
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        background-color: #000000;
     }
     
     #configPanel {
-        margin: 5px;
+        margin: 0;
         padding: 10px;
-        max-height: 98vh;
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+        padding-left: max(10px, env(safe-area-inset-left));
+        padding-right: max(10px, env(safe-area-inset-right));
+        max-height: 100vh;
         overflow-y: scroll;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
+        border-radius: 0;
     }
     
     .color-options {
