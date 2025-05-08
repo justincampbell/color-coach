@@ -154,9 +154,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Set background color
         colorDisplay.style.backgroundColor = color;
+        document.body.style.backgroundColor = color;
+        document.documentElement.style.backgroundColor = color;
         
         // Show color name if enabled
         colorDisplay.textContent = CONFIG.showColorName ? color : '';
+        
+        // Force repaint to avoid gaps
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            colorDisplay.style.height = '100vh';
+            colorDisplay.style.height = '100dvh';
+            colorDisplay.style.height = '-webkit-fill-available';
+        }, 5);
     }
     
     // Start color changing timer

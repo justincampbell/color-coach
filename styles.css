@@ -23,8 +23,9 @@ body {
 
 #colorDisplay {
     width: 100vw;
-    height: 100vh;
-    height: calc(100vh + env(safe-area-inset-bottom));
+    height: 100vh; 
+    height: 100dvh; /* Dynamic viewport height */
+    height: -webkit-fill-available;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,9 +38,13 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    bottom: -1px; /* Ensure no gap at bottom */
+    bottom: 0;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateZ(0); /* Hardware acceleration */
+    z-index: 9999;
 }
 
 /* Config Panel */
